@@ -2,6 +2,10 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+$router->get('/status', function (\Illuminate\Http\Request $request) use ($router) {
+    return response("Healthy", 200);
+});
+
 $router->post('/api/v1/execute', function (\Illuminate\Http\Request $request) use ($router) {
     if (!$request->isJson()) {
         return response("Invalid JSON body", 400);
