@@ -36,6 +36,7 @@ $router->post('/api/v1/execute', function (\Illuminate\Http\Request $request) us
 
     return response()->json([
         'opcode' => $opcode,
+        'id' => $cpu->get('id'),
         'state' => [
             'a' => $state['a'],
             'b' => $state['b'],
