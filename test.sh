@@ -5,9 +5,9 @@ sleep 5
 
 RESULT=`curl -s --header "Content-Type: application/json" \
   --request POST \
-  --data '{"id":"abcd", "opcode":9,"state":{"a":10,"b":51,"c":159,"d":5,"e":5,"h":161,"l":123,"flags":{"sign":false,"zero":true,"auxCarry":true,"parity":true,"carry":true},"programCounter":1,"stackPointer":2,"cycles":0}}' \
+  --data '{"id":"abcd", "opcode":9,"state":{"a":10,"b":51,"c":159,"d":5,"e":5,"h":161,"l":123,"flags":{"sign":false,"zero":true,"auxCarry":true,"parity":true,"carry":true},"programCounter":1,"stackPointer":2,"cycles":0,"interruptsEnabled":true}}' \
   http://localhost:8080/api/v1/execute`
-EXPECTED='{"id":"abcd", "opcode":9,"state":{"a":10,"b":51,"c":159,"d":5,"e":5,"h":213,"l":26,"flags":{"sign":false,"zero":true,"auxCarry":true,"parity":true,"carry":false},"programCounter":1,"stackPointer":2,"cycles":10}}'
+EXPECTED='{"id":"abcd", "opcode":9,"state":{"a":10,"b":51,"c":159,"d":5,"e":5,"h":213,"l":26,"flags":{"sign":false,"zero":true,"auxCarry":true,"parity":true,"carry":false},"programCounter":1,"stackPointer":2,"cycles":10,"interruptsEnabled":true}}'
 
 docker kill dad
 

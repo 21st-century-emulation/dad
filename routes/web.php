@@ -54,7 +54,8 @@ $router->post('/api/v1/execute', function (\Illuminate\Http\Request $request) us
                 'auxCarry' => $state['flags']['auxCarry'],
                 'parity' => $state['flags']['parity'],
                 'carry' => $result > 0xFFFF,
-            ]
+            ],
+            'interruptsEnabled' => $state['interruptsEnabled']
         ]
     ]);
 });
