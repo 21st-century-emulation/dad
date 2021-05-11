@@ -25,7 +25,7 @@ $router->post('/api/v1/execute', function (\Illuminate\Http\Request $request) us
             $operand = $hl;
             break;
         case "57": // DAD SP
-            $operand = $state['stackPointer'] << 8;
+            $operand = $state['stackPointer'];
             break;
         default:
             return response("Invalid opcode", 400);
